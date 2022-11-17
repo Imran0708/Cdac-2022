@@ -1,0 +1,20 @@
+package com.cdac.demo;
+	import com.cdac.operations.ArrayOperations;
+
+
+	public class Demo {
+	   
+	    public static void main(String[] args) {
+	        
+	        ArrayOperations arrayOperations=new ArrayOperations();
+	        arrayOperations.populate();
+	        arrayOperations.display();
+	        arrayOperations.countElements();
+	        
+	        
+	        
+	    }
+	    
+	    
+	    
+	}

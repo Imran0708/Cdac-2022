@@ -1,0 +1,95 @@
+package main;
+
+public class cafe {
+	import java.util.Scanner;
+
+	public class Cafe1 {
+		public double subTotal;
+		public static double runningTotal;
+		private static double itemPrice;
+		static boolean ordering = true;
+		
+		static Scanner input = new Scanner(System.in);
+		
+		public static void menu(){
+			System.out.println("*Welcome to our Cafe1* \n MENUCARD \n1. Coffee (Rs.50) \n2. Hot Chocolate (Rs.75)  \n3. Burger (RS.99) \n4. Fries (RS.89) ");
+		}
+		
+		public static double itemPrice(int foodItem){
+			
+			if (foodItem == 1){
+				System.out.println("you've ordered a Coffee");
+				itemPrice = 50.00;
+			}
+			if (foodItem == 2){
+				System.out.println("you've ordered a Hot Chocolate");
+				itemPrice = 75.00;
+			}
+			if (foodItem == 3){
+				System.out.println("you've ordered a Burger");
+				itemPrice = 99.00;
+			}
+			if (foodItem == 4){
+				System.out.println("you've ordered a Fries");
+				itemPrice = 89.00;
+			}
+			quantity();
+			return itemPrice;
+		}
+		
+		public static double quantity(){
+			System.out.println("Enter quantity");
+			double quantity = input.nextDouble();
+			SubTotal(quantity, itemPrice);
+			return quantity;
+		}
+		
+		public static double SubTotal(double quantity, double itemPrice){
+			double subTotal = quantity * itemPrice;
+			System.out.println("Subtotal= Rs. " + subTotal);
+			return subTotal;
+			
+		}
+		public static void done(double runningToal){
+			ordering = false;
+			System.out.println(runningTotal);
+			System.out.println("Enjoy your meal! ");
+		}
+		public static void selection(){
+		int MenuOption;
+		int foodItem = 0 ;
+		input = new Scanner (System.in);
+		do{
+			double runningTotal = 0;
+			menu();
+			MenuOption = input.nextInt();
+			switch(MenuOption){
+			case 1:
+				foodItem = 1;
+				itemPrice(foodItem);
+				break;
+			case 2:
+				foodItem = 2;
+				itemPrice(foodItem);
+				break;
+			case 3:
+				foodItem = 3;
+				itemPrice(foodItem);
+				break;
+			case 4:
+				foodItem = 4;
+				itemPrice(foodItem);
+				break;
+				default:
+					System.out.println("Choose the correct option");
+			}
+		} 
+	while (ordering);
+		{
+			SubTotal(quantity(), itemPrice(foodItem));
+			runningTotal = runningTotal + SubTotal(quantity(), itemPrice(foodItem));
+		}
+	}
+
+	}
+}

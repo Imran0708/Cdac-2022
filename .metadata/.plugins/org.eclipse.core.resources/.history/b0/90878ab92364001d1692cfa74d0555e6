@@ -1,0 +1,16 @@
+package Cafe;
+
+public class Cafe {
+	 abstract class Cafe {
+		    
+		    abstract void menu();
+		    abstract void order();
+		    abstract void bill();
+		    
+		}
+
+	void order() {
+		// TODO Auto-generated method stub
+		
+	}
+}
